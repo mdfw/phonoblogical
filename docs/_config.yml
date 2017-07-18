@@ -16,7 +16,7 @@
 title: Phonoblogical Development
 email: phonoblogical@mdfw.me    
 description: "A development blog for a new project by mdfw"
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/phonoblogical" # the subpath of your site, e.g. /blog
 url: "https://mdfw.github.io/phonoblogical" 
 twitter_username: mdfw
 github_username:  mdfw
