@@ -19,6 +19,9 @@ tags: x-sup
 id 				| String | probably from Couch 
 dateCreated 	| Date 
 dateModified	| Date
+createdBy		| User
+modifiedBy		| User
+
 
 <br />
 ### All 'targetable'
@@ -27,19 +30,21 @@ _Targetable are those that can have a url, not used internally by the app_
 | name | Type | notes |
 | --- | --- | :----: |
 shortID 		| String | Something short for URL - see snowflake 
+status			| String | "draft", "published", "removed", "review"
+signature		| String | 
 
 <br />
 
 ---
 
 <br />
-### Author profile:
+### User profile:
 _These are separate from the actual user table that will not be syncable._
 
 | name | Type | notes |
 | --- | --- | :----: |
 doctype 	| "pbprofile"
-authorID 	| String 	| From the ? _need to figure out_
+userID 		| String 	| From the ? _need to figure out_
 handle 		| String
 real_name 	| String 	| optional: real name
 
@@ -115,13 +120,11 @@ reviews:		| [Review]
 | name | Type | notes |
 | --- | --- | :----: |
 doctype 		| "pbblog"
-title:			| String
-text:			| String
-stub:			| String
-tags:			| [String]
-language:		| String
-status:			| String
-author:			| User
+title			| String
+text			| String
+stub			| String
+tags			| [String]
+language		| String
 
 <br />
 ### Review:
