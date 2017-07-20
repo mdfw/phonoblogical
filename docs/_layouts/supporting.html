@@ -5,10 +5,17 @@ layout: default
 <div class="home">
 
   <h1 class="page-heading">Supporting files</h1>
-    <ul class="trigger">
+  
+    <ul class="post-list">
     {% for a_page in site.pages %}
     {% if a_page.title and a_page.tags contains 'supporting'%}
-     <li><h3><a class="post-link" href="{{ a_page.url | relative_url }}">{{ a_page.title | escape }}</a><h3></li>
+      <li>
+        <span class="post-meta">{{ a_page.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ a_page.url | relative_url }}">{{ a_page.title | escape }}</a>
+        </h2>
+      </li>
     {% endif %}
     {% endfor %}
   </ul>
