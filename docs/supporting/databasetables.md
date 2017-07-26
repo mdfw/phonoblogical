@@ -22,6 +22,23 @@ dateModified	| Date
 createdBy		| User
 modifiedBy		| User
 
+<br />
+## Site
+
+| name | Type | notes |
+| --- | --- | :----: |
+title 			| String | The title of the site "Phonoblogical" used if empty
+url				| URL 	 | The url of the site
+tagline			| {i18}  | The tagline used in the site description (mostly google).
+
+<br />
+## _user extensions
+
+| name | Type | notes |
+| --- | --- | :----: |
+audienceLevel		| String | 'all', 'member', 'patron', 'none'
+email				| String.email | email address of user
+
 
 <br />
 ### All 'targetable'
@@ -30,8 +47,10 @@ _Targetable are those that can have a url, not used internally by the app_
 | name | Type | notes |
 | --- | --- | :----: |
 shortID 		| String | Something short for URL - see snowflake 
-status			| String | "draft", "published", "removed", "review"
-signature		| String | 
+status			| String | "draft", "published", "removed", "review", "submitted"
+signature		| String | Future: Allow for signing content. See <https://wiki.apache.org/couchdb/SignedDocuments>
+
+_May want to consider header items. See: <https://gist.github.com/kevinSuttle/1997924>_
 
 <br />
 
@@ -71,6 +90,7 @@ tracks			| [Track]
 urls			| [URL]
 tags			| [String]
 reviews			| [Review]
+audience		| String | 'all', 'member', 'patron', 'none'
 
 <br />
 ### Track:
@@ -91,6 +111,7 @@ BPM				| Int
 urls			| [URL]
 videos			| [URL]
 reviews			| [Review]
+audience		| String | 'all', 'member', 'patron', 'none'
 
 <br />
 ### Artist:
@@ -104,6 +125,7 @@ tracks:			| [Track]
 albums:			| [Album]
 urls:			| [URL]
 reviews: 		| [Review]
+audience		| String | 'all', 'member', 'patron', 'none'
 
 <br />
 ### Video:
@@ -113,6 +135,7 @@ reviews: 		| [Review]
 doctype 		| "pbvideo"
 url: 			| [URL]
 reviews:		| [Review]
+audience		| String | 'all', 'member', 'patron', 'none'
 
 <br />
 ### Blog Post:
@@ -125,6 +148,7 @@ text			| String
 stub			| String
 tags			| [String]
 language		| String
+audience		| String | 'all', 'member', 'patron', 'none'
 
 <br />
 ### Review:
@@ -135,6 +159,7 @@ doctype 		| "pbreview"
 reviewText: 	| {i18n}
 ratings:		| [Rating]
 weApprove: 		| bool
+audience		| String | 'all', 'member', 'patron', 'none'
 
 <br />
 ### Rating:
@@ -145,6 +170,7 @@ doctype 		| "pbrating"
 ratingType: 	| RatingType 
 ratingText: 	| {i18n}
 rating:			| Number
+audience		| String | 'all', 'member', 'patron', 'none'
 
 <br />
 ### Rating type:
@@ -161,4 +187,5 @@ type 			| {i18n}
 | name | Type | notes |
 | --- | --- | :----: |
 doctype 		| "pbpage"
-text:			| {i18n}
+text			| {i18n}
+audience		| String | 'all', 'member', 'patron', 'none'
