@@ -9,9 +9,9 @@
   "author": "Mark Williams",
   "license": "ISC",
   "dependencies": {
+    "couch-slouch": "0.0.3",
     "express": "4.15.3",
     "helmet": "3.6.1",
-    "nano": "6.4.0",
     "pug": "2.0.0-rc.2"
   }
 }
